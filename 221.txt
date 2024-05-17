@@ -1,0 +1,46 @@
+N:=221;  
+  M := CuspForms(N);
+    B := Basis(M);
+ dec := Decomposition(JZero(N));
+ for i in [1..#dec] do
+    Dimension(dec[i]),  IsZeroAt(LSeries(dec[i]),1);
+  end for;  
+  
+   
+for i in [1..#dec] do
+dec[i];
+end for; 
+  
+//1 false
+//1 false
+//2 true
+//2 false
+//2 false
+//3 true
+//6 false
+//1 false
+//1 false
+
+
+for i in [1,2,4,5,7] do
+	K:=CoefficientRing(Parent(Newform(dec[i]))); 
+	fac:=Factorization(3*RingOfIntegers(K)); 
+	for j:=1 to #fac do Norm(fac[j,1]); end for;
+end for;
+
+
+ 
+n:=3^10;
+mat := Matrix(        
+          [[GF(n)!Coefficient(((Reductions(f,3))[1,1]),k) : k in [1..4]] where f is Newform(dec[1]) ] cat           
+          [[GF(n)!Coefficient(((Reductions(f,3))[1,1]),k) : k in [1..4]] where f is Newform(dec[2]) ] cat 
+		  [[GF(n)!Coefficient(((Reductions(f,3))[1,1]),k) : k in [1..4]] where f is Newform(dec[4]) ] cat
+		  [[GF(n)!Coefficient(((Reductions(f,3))[1,2]),k) : k in [1..4]] where f is Newform(dec[4]) ] cat
+		  [[GF(n)!Coefficient(((Reductions(f,3))[1,1]),k) : k in [1..4]] where f is Newform(dec[5]) ] cat
+		  [[GF(n)!Coefficient(((Reductions(f,3))[1,1]),k) : k in [1..4]] where f is Newform(dec[7]) ] cat
+		  [[GF(n)!Coefficient(((Reductions(f,3))[2,2]),k) : k in [1..4]] where f is Newform(dec[7]) ] cat
+		  [[GF(n)!Coefficient(((Reductions(f,3))[2,1]),k) : k in [1..4]] where f is Newform(dec[7])
+		  ]);
+mat;
+Rank(mat); //4
+

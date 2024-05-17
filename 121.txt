@@ -1,0 +1,43 @@
+ N:=121;
+ M := CuspForms(N);
+  R<q> := PowerSeriesRing(Integers());
+
+    dec := Decomposition(JZero(N));
+    for i in [2..5] do 
+	Rank(EllipticCurve(dec[i])); 
+    end for;
+
+  for tup in [[4-j, j] : j in [0..4]] do
+      mat := Matrix([          
+          [Coefficient(f,k) : k in [1..tup[1]]] cat 
+          [Coefficient(AtkinLehnerOperator(121,f),k) : k in [1..tup[2]]]
+          where f is M!(R!Newform(dec[i])) : 
+          i in [2..5]
+      ]);
+      mat;
+      Rank(RMatrixSpace(GF(7),4,4)!mat);
+  end for;
+  
+  
+  
+  
+  
+  
+  
+   O:=RingOfIntegers(Compositum(K1,K3));
+ N:=121;
+ M := CuspForms(N);
+ dec := Decomposition(JZero(N));
+for i in [1..#dec] do
+    Dimension(dec[i]),  IsZeroAt(LSeries(dec[i]),1);
+  end for;  
+ p:=11;
+ mat := Matrix(        
+          [[GF(p)!Coefficient(((Reductions(f,p))[1,1]),k) : k in [1..4]] where f is Newform(dec[2]) ] cat           
+          [[GF(p)!Coefficient(((Reductions(f,p))[1,1]),k) : k in [1..4]] where f is Newform(dec[3]) ] cat 
+		  [[GF(p)!Coefficient(((Reductions(f,p))[1,1]),k) : k in [1..4]] where f is Newform(dec[4]) ] cat
+		  [[GF(p)!Coefficient(((Reductions(f,p))[1,1]),k) : k in [1..4]] where f is Newform(dec[5]) ] cat
+		  [[GF(p)!Coefficient(((Reductions(f,p))[1,1]),k) : k in [1..4]] where f is Newform(dec[6])
+		  ]);
+mat;
+Rank(mat);
