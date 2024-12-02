@@ -17,7 +17,7 @@ print "Claim 1 successfully verified";
 
 // this means we need to check
 // deg2 + two cusps
-// deg2+deg2
+// deg2 + deg2
 // deg3 + cusp
 // deg4
 
