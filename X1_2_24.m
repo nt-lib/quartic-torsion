@@ -71,5 +71,5 @@ end for;
 assert #todo4a eq 0;
 print "Claim 4 successfully verified";
 
-exit
+exit;
 

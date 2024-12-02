@@ -78,4 +78,4 @@ end for;
 assert #todo4 eq 0;
 print "Claim 5 successfully verified";
 
-exit
+exit;
