@@ -12,7 +12,7 @@ AttachSpec("mdmagma.spec");
 X := MDX11(2,20,GF(7));
 
 // Claim 1 compute the number of noncuspidal places of degree <= 4
-assert [#NoncuspidalPlaces(X,i) : i in [1..4]] eq [ 0, 16, 128, 704 ];                                                                                                                            
+assert [#NoncuspidalPlaces(X,i) : i in [1..4]] eq [0, 16, 128, 704];                                                                                                                            
 print "Claim 1 successfully verified";
 
 // this means we need to check
