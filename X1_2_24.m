@@ -3,8 +3,6 @@
 AttachSpec("mdmagma.spec");
 
 // We work over GF(5) since 5 is the smallest prime of good reduction
-
-
 X := MDX11(2,24,GF(5));
 
 // Claim 1: compute the number of noncuspidal places of degree <= 4
@@ -14,7 +12,6 @@ print "Claim 1 successfully verified";
 // this means we need to check
 // deg3 + cusp
 // deg4
-
 
 
 // Claim 2: There is only one place of degree 3 up to isomorphisms
