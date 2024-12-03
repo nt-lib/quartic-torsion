@@ -1,6 +1,6 @@
-// This file depends on mdmgamga v2 which can be found at https://github.com/koffie/mdmagma/
-// We ensure that mdmagma v2 is loaded.
-AttachSpec("mdmagma.spec");
+// This file depends on mdmagma v2 which can be found at https://github.com/koffie/mdmagma/
+// It is already included as a subrepo so the following ensures that mdmagma v2 is loaded.
+AttachSpec("mdmagma/v2/mdmagma.spec");
 
 // We work over GF(5) since 5 is the smallest prime of good reduction
 X := MDX11(2,24,GF(5));

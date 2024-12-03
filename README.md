@@ -10,8 +10,8 @@ As an example we will show how to reproduce the computations needed to rule out 
 
 ```bash
 git clone --recurse-submodules https://github.com/nt-lib/quartic-torsion
-cd quartic-torsion/mdmagma/v2
-magma ../../X1_2_20.m
+cd quartic-torsion
+magma X1_2_20.m
 ```
 
 
