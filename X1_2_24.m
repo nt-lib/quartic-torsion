@@ -52,10 +52,9 @@ for D in NoncuspidalPlaces(X,4) do
   A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
   if IsPrincipal(A_qD) then
     Append(~todo4, D);
-    print "todo";
   end if;
 end for;
-assert #todo4 eq 16;
+assert #todo4 eq 32;
 // Not all degree 4 places got ruled out, so we try the same 
 // with the next value of q
 
@@ -65,7 +64,6 @@ for D in todo4 do
   A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
   if IsPrincipal(A_qD) then
     Append(~todo4a, x);
-    print "todo";
   end if;
 end for;
 assert #todo4a eq 0;
