@@ -1,0 +1,14 @@
+$ magma X1_2_20.m
+Magma V2.28-3     Tue Dec  3 2024 12:56:17 on euler    [Seed = 1884943082]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "/home/mderickx/.magma/startup.m"
+
+Loading file "X1_2_20.m"
+Claim 1 successfully verified
+Claim 2 successfully verified
+Claim 3 successfully verified
+Claim 4 successfully verified
+Claim 5 successfully verified
+
+Total time: 5900.609 seconds, Total memory usage: 1426.28MB
