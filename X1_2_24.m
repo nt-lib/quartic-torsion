@@ -63,7 +63,7 @@ q := 11;
 for D in todo4 do
   A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
   if IsPrincipal(A_qD) then
-    Append(~todo4a, x);
+    Append(~todo4a, D);
   end if;
 end for;
 assert #todo4a eq 0;
