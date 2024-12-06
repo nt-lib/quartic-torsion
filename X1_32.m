@@ -2,7 +2,7 @@
 // It is already included as a subrepo so the following ensures that mdmagma v2 is loaded.
 AttachSpec("mdmagma/v2/mdmagma.spec");
 
-// todo verify all deg 1 cusps lift to Q
+// 3 is inert in Q(zeta_32)^+ so all cusps lift
 
 X := MDX1(32,GF(3));
 

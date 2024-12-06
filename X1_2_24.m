@@ -38,7 +38,6 @@ D := NoncuspidalPlaces(X,3)[1];
 // So we can only use q that split Q(sqrt(6))
 // the smallest such q we can use is 19
 q := 19;
-todo3 := [];
 A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
 assert not IsPrincipal(A_qD);
 print "Claim 3 successfully verified";
