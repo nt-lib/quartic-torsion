@@ -17,7 +17,7 @@ print "Claim 1 successfully verified";
 
 
 // The smallest values of q we can use
-q := 3;
+q := 7;
 
 // Claim 2: Cannot have reduction of the form deg4
 todo4 := [];
