@@ -47,26 +47,12 @@ print "Claim 3 successfully verified";
 // Claim 4: Cannot have reduction of the form deg4 + cusp
 // Degree 0 cusps don't exist so we can use q=7
 q := 7;
-todo4 := [];
-for D in NoncuspidalPlaces(X,4) do
-  A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
-  if IsPrincipal(A_qD) then
-    Append(~todo4, D);
-  end if;
-end for;
-assert #todo4 eq 32;
-// Not all degree 4 places got ruled out, so we try the same 
+time sieved := HeckeSieve(X, q, NoncuspidalPlaces(X,4));
+assert #sieved eq 32;
+// Not all degree 4 places got ruled out, so we try the same
 // with the next value of q
-
-todo4a := [];
 q := 11;
-for D in todo4 do
-  A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
-  if IsPrincipal(A_qD) then
-    Append(~todo4a, D);
-  end if;
-end for;
-assert #todo4a eq 0;
+assert #HeckeSieve(X, q, sieved) eq 0;
 print "Claim 4 successfully verified";
 
 exit;
