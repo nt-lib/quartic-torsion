@@ -14,6 +14,44 @@ cd quartic-torsion
 magma X1_2_20.m
 ```
 
+In order to verify all computations simply run
+
+```bash
+./verify_all.sh 10
+```
+
+this requires GNU parallel to be installed and will verify all computations. The number 
+10 here is the number of verification jobs to run in parallel. he results of all these 
+jobs will be logged in the `logs` directory. The file `logs/verify_joblog.txt` contains 
+an overview of the completed jobs. The files of the form `logs/X1_N.txt` contain the
+logs of the individual jobs. After `verify_all.sh` is finished one can run
+```bash
+git diff
+```
+to see the differences between our logs and the reproduction run.
+If the reproduction was successful then the only differences reported by `git diff` 
+should be differences in the magma version and the total time and total memory reported 
+as in the example shown below.
+
+```diff
+diff --git a/logs/X1_2_20.txt b/logs/X1_2_20.txt
+index c8f2cb3..b440f2d 100644
+--- a/logs/X1_2_20.txt
++++ b/logs/X1_2_20.txt
+@@ -1,5 +1,4 @@
+-$ magma X1_2_20.m
+-Magma V2.28-3     Tue Dec  3 2024 12:56:17 on euler    [Seed = 1884943082]
++Magma V2.28-3     Fri Dec  6 2024 16:48:38 on euler    [Seed = 1950362664]
+ Type ? for help.  Type <Ctrl>-D to quit.
+ 
+ Loading startup file "/home/mderickx/.magma/startup.m"
+@@ -11,4 +10,4 @@ Claim 3 successfully verified
+ Claim 4 successfully verified
+ Claim 5 successfully verified
+ 
+-Total time: 5900.609 seconds, Total memory usage: 1426.28MB
++Total time: 6016.630 seconds, Total memory usage: 1426.28MB
+```
 
 # Logs
 
