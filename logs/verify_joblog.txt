@@ -1,0 +1,10 @@
+Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
+3	:	1733500118.616	     6.275	0	0	0	0	magma X1_25.m >| logs/X1_25.txt
+6	:	1733500118.626	    12.289	0	0	0	0	magma X1_32.m >| logs/X1_32.txt
+7	:	1733500118.630	    55.349	0	0	0	0	magma X1_34.m >| logs/X1_34.txt
+5	:	1733500118.623	    61.134	0	0	0	0	magma X1_28.m >| logs/X1_28.txt
+4	:	1733500118.620	   275.109	0	0	0	0	magma X1_26.m >| logs/X1_26.txt
+8	:	1733500118.639	  1195.440	0	0	0	0	magma X1_36.m >| logs/X1_36.txt
+9	:	1733500118.647	  2662.085	0	0	0	0	magma X1_42.m >| logs/X1_42.txt
+1	:	1733500118.608	  6017.062	0	0	0	0	magma X1_2_20.m >| logs/X1_2_20.txt
+2	:	1733500118.612	  8613.051	0	0	0	0	magma X1_2_24.m >| logs/X1_2_24.txt

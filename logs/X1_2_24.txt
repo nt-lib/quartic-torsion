@@ -1,5 +1,4 @@
-$ magma X1_2_24.m
-Magma V2.28-3     Wed Dec  4 2024 03:42:32 on euler    [Seed = 4022820370]
+Magma V2.28-3     Fri Dec  6 2024 16:48:38 on euler    [Seed = 2294075605]
 Type ? for help.  Type <Ctrl>-D to quit.
 
 Loading startup file "/home/mderickx/.magma/startup.m"
@@ -8,6 +7,7 @@ Loading file "X1_2_24.m"
 Claim 1 successfully verified
 Claim 2 successfully verified
 Claim 3 successfully verified
+Time: 7111.390
 Claim 4 successfully verified
 
-Total time: 8164.970 seconds, Total memory usage: 416.47MB
+Total time: 8612.469 seconds, Total memory usage: 416.47MB
