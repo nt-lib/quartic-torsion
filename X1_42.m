@@ -44,7 +44,7 @@ print "Claim 4 successfully verified";
 
 
 // Claim 5: Cannot have reduction of the form deg4
-time sieved := HeckeSieve(X, Y, q, NoncuspidalPlaces(X,4));
+sieved := HeckeSieve(X, Y, q, NoncuspidalPlaces(X,4));
 assert #sieved eq 93;
 assert #HeckeSieve(X, q, sieved) eq 0;
 print "Claim 5 successfully verified";

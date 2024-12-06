@@ -46,7 +46,7 @@ print "Claim 3 successfully verified";
 // Claim 4: Cannot have reduction of the form deg4 + cusp
 // Degree 0 cusps don't exist so we can use q=7
 q := 7;
-time sieved := HeckeSieve(X, q, NoncuspidalPlaces(X,4));
+sieved := HeckeSieve(X, q, NoncuspidalPlaces(X,4));
 assert #sieved eq 32;
 // Not all degree 4 places got ruled out, so we try the same
 // with the next value of q
