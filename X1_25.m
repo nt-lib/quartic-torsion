@@ -20,7 +20,7 @@ print "Claim 1 successfully verified";
 q := 7;
 
 // Claim 2: Cannot have reduction of the form deg4
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,4)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,4)) eq 0;
 print "Claim 2 successfully verified";
 
 exit;

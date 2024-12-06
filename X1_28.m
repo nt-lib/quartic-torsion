@@ -22,22 +22,22 @@ print "Claim 1 successfully verified";
 q := 3;
 
 // Claim 2: Cannot have reduction of the form deg2 + 2 cusps
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,2)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,2)) eq 0;
 print "Claim 2 successfully verified";
 
 
 // Claim 3: Cannot have reduction of the form deg2 + deg2
 S := [x+y: x,y in NoncuspidalPlaces(X,2)];
-assert #HeckeFilter(X, q, S) eq 0;
+assert #HeckeSieve(X, q, S) eq 0;
 print "Claim 3 successfully verified";
 
 
 // Claim 4: Cannot have reduction of the form deg3 + cusp
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,3)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,3)) eq 0;
 print "Claim 4 successfully verified";
 
 // Claim 5: Cannot have reduction of the form deg4
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,4)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,4)) eq 0;
 print "Claim 5 successfully verified";
 
 exit;

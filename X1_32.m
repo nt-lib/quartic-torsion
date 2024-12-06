@@ -19,11 +19,11 @@ print "Claim 1 successfully verified";
 q := 5;
 
 // Claim 2: Cannot have reduction of the form deg3 + cusp
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,3)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,3)) eq 0;
 print "Claim 2 successfully verified";
 
 // Claim 3: Cannot have reduction of the form deg4
-assert #HeckeFilter(X, q, NoncuspidalPlaces(X,4)) eq 0;
+assert #HeckeSieve(X, q, NoncuspidalPlaces(X,4)) eq 0;
 print "Claim 3 successfully verified";
 
 exit;
