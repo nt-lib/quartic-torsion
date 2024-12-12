@@ -12,6 +12,10 @@ assert [#NoncuspidalPlaces(X,i) : i in [1..4]] eq [0, 48, 456, 3471];
 print "Claim 1 successfully verified";
 
 
+//this shows that the degree 1 and degree 2 cusps lift, by comparing to: https://beta.lmfdb.org/ModularCurve/Q/42.1152.25-42.c.1.8/
+assert Sort([Degree(c) : c in Cusps(X)]) eq [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 6, 6 ];
+
+
 // this means we need to check
 // deg2 + two cusps
 // deg2 + deg2
