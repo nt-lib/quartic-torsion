@@ -2,7 +2,7 @@
 // It is already included as a subrepo so the following ensures that mdmagma v2 is loaded.
 AttachSpec("mdmagma/v2/mdmagma.spec");
 
-// We work over GF(3) since 3 is inert Q(zeta_25)^+ so that all cusps lift
+// We work over GF(3) since 3 is inert Q(zeta_25) so that all cusps lift
 
 X := MDX1(25,GF(3));
 
