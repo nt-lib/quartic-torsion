@@ -21,16 +21,13 @@ print "Claim 1 successfully verified";
 // Claim 2: Cannot have reduction of the form deg3 +cusp
 sieved := HeckeSieve(X, Y, 13, NoncuspidalPlacesUpToDiamond(X,3));
 sieved2 := HeckeSieve(X, 13, sieved);
-//sieved2;
 assert #sieved2 eq 0; 
 print "Claim 2 successfully verified";
 
- 3: Cannot have reduction of the form deg4
+// Claim 3: Cannot have reduction of the form deg4
 sieved := HeckeSieve(X, Y, 7, NoncuspidalPlacesUpToDiamond(X,4));
 sieved2 := HeckeSieve(X, 7, sieved);
-//sieved2;
 assert #sieved2 eq 0; 
 
-//
 
 exit;
