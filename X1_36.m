@@ -1,5 +1,7 @@
 AttachSpec("mdmagma/v2/mdmagma.spec");
 X := MDX1(36,GF(5));
+// we will sieve ony Y first to make the code faster
+Y := MDX1(18,GF(5));
 // Claim 1 compute the number of noncuspidal places of degree <= 4
 assert [#NoncuspidalPlaces(X,i) : i in [1..4]] eq [ 0, 0, 48, 144 ];
 print "Claim 1 successfully verified";
@@ -10,33 +12,25 @@ print "Claim 1 successfully verified";
 
 // The smallest values of q we can use such that we know
 // T_q-q<q>-1 vanishes on Q rational torsion.
-q := 7;
 
-// Claim 2: Cannot have reduction of the form deg3
-todo4 := [];
-for D in NoncuspidalPlaces(X,3) do
-  A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
-  if IsPrincipal(A_qD) then
-    Append(~todo3, D);
-  end if;
-end for;
-assert #todo3 eq 0;
+
+//cusp_degrees := Sort([Degree(c) : c in Cusps(X)]);
+//assert cusp_degrees eq [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 6, 6 ];
+
+
+// Claim 2: Cannot have reduction of the form deg3 +cusp
+sieved := HeckeSieve(X, Y, 13, NoncuspidalPlacesUpToDiamond(X,3));
+sieved2 := HeckeSieve(X, 13, sieved);
+//sieved2;
+assert #sieved2 eq 0; 
 print "Claim 2 successfully verified";
 
+ 3: Cannot have reduction of the form deg4
+sieved := HeckeSieve(X, Y, 7, NoncuspidalPlacesUpToDiamond(X,4));
+sieved2 := HeckeSieve(X, 7, sieved);
+//sieved2;
+assert #sieved2 eq 0; 
 
-// Claim 3: Cannot have reduction of the form deg4
-todo4 := [];
-for D in NoncuspidalPlaces(X,4) do
-  A_qD := HeckeOperator(X,q,D)-q*DiamondOperator(X,q,D)-D;
-  if IsPrincipal(A_qD) then
-    Append(~todo4, D);
-  end if;
-end for;
-assert #todo4 eq 0;
-print "Claim 3 successfully verified";
+//
 
 exit;
-
-//Claim 3 successfully verified;
-
-//note: 5 inert in Q(\zeta_{36})^+
