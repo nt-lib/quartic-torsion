@@ -14,10 +14,6 @@ print "Claim 1 successfully verified";
 // T_q-q<q>-1 vanishes on Q rational torsion.
 
 
-//cusp_degrees := Sort([Degree(c) : c in Cusps(X)]);
-//assert cusp_degrees eq [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 6, 6 ];
-
-
 // Claim 2: Cannot have reduction of the form deg3 +cusp
 sieved := HeckeSieve(X, Y, 13, NoncuspidalPlacesUpToDiamond(X,3));
 sieved2 := HeckeSieve(X, 13, sieved);
@@ -28,6 +24,5 @@ print "Claim 2 successfully verified";
 sieved := HeckeSieve(X, Y, 7, NoncuspidalPlacesUpToDiamond(X,4));
 sieved2 := HeckeSieve(X, 7, sieved);
 assert #sieved2 eq 0; 
-
 
 exit;
