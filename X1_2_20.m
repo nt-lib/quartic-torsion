@@ -5,9 +5,6 @@ AttachSpec("mdmagma/v2/mdmagma.spec");
 // working over GF(3) doesn't work since there are
 // noncuspidal degree 4 places that survive the filtering
 
-// 7 is inert in Q(zeta_20)^+ so all frobenius orbits of cusps
-// over F_7 lift to Q.
-
 
 X := MDX11(2,20,GF(7));
 
