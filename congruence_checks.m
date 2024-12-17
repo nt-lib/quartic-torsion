@@ -1,6 +1,6 @@
 //This procedure prints out the CC in our Table 1 and verifies Claim 1 - for given p and n it verifies that if a cusp of X_1(n) or X_1(m,n) not defined over Q becomes defined over F_p, then q must split completely in the field of defintiion of the cusp. 
 
-CC:=procedure(n,p)
+procedure CC(n,p)
 	for d in [a: a in Divisors(n)|a lt n/2] do 
 		g:= n div d;
 		if d eq 1 and ((p mod n) eq 1 or (p mod n) eq -1) then print("q has to be congruent to +-1 modulo "),n; end if;
@@ -9,34 +9,23 @@ CC:=procedure(n,p)
 	end for;
 end procedure;
 
-// we now call this function for the values in our table
 
-pairs:=[[25,3],[26,7],[28,5],[32,3],[34,3],[36,5],[42,11],[20,7],[24,5]];
-for x in pairs do 
-	x[1];
-	CC(x[1],x[2]);
-end for;
 
-mominus:= function(p,a) //determines the order of p in (Z/aZ)^x/(-1)
+function OrderMinus(p,a) //determines the order of p in (Z/aZ)^x/(-1)
 i:=1; t:=p mod a; while (t ne 1) and (t ne (a-1)) do t:=t*p mod a; i:=i+1; end while;
 return i;
-end function;
-
-mo:= function(p,a) //determines the order of p  in (Z/aZ)^x
-	i:=1; t:=p mod a; while (t ne 1) do t:=t*p mod a; i:=i+1; end while;
-	return i;
 end function;
 
 cusp_degree_fp:=function(p,n,d) // computes the degree of the cusp of X_1(N) corresponding to d over F_p
 	assert (n mod d) eq 0;
 	a:=n div d;
-	if d le 2 then ord:=mominus(p,a);
-	else ord:=mo(p,a);
+	if d le 2 then ord:=OrderMinus(p,a);
+	else ord:=Order(p,a);
 	end if;
 return ord;
 end function;
 
-cusp_degree:=function(n,d) // computes the degree of the cusp of X_1(N) corresponding to d over Q
+function cusp_degree(n,d) // computes the degree of the cusp of X_1(N) corresponding to d over Q
 	assert (n mod d) eq 0;
 	a:= n div d;
 	if d le 2 then ord:=EulerPhi(a) div 2;
@@ -45,8 +34,8 @@ cusp_degree:=function(n,d) // computes the degree of the cusp of X_1(N) correspo
 	return ord;
 end function;
 
-//We now check that when there are degree 2 points on Y_{F_p}, that the degree 1 and 2 cusps all reduce to degree 1 and 2 points. This should not be run in the cases where there are no degree 2 points on Y_{F_p}.
-deg2cuspcheck:=procedure(n,p)
+//This procedure that when there are degree 2 points on Y_{F_p}, that the degree 1 and 2 cusps all reduce to degree 1 and 2 points. This should not be run in the cases where there are no degree 2 points on Y_{F_p}.
+procedure deg2cuspcheck(n,p)
 	for d in [b: b in Divisors(n)|b lt n/2] do
 		degfp:=cusp_degree_fp(p,n,d); // this is 
 		deg:=cusp_degree(n,d);
@@ -64,9 +53,23 @@ deg2cuspcheck:=procedure(n,p)
 	end for;
 end procedure;
 
+
+
+
+// we now verify Claim 1, this produces the CC values in Table 1.
+
+pairs:=[[25,3],[26,7],[28,5],[30,7],[32,3],[34,3],[36,5],[42,11],[20,7],[24,5]];
+for x in pairs do 
+	x[1];
+	CC(x[1],x[2]);
+end for;
+
+
+
+
 //Now we verify Claim 2 for the pairs (n,p) where are degree 2 points on Y_{F_p}
 
-pairs:=[[26,7],[28,5],[42,11],[20,7]];
+pairs:=[[26,7],[28,5],[30,7],[42,11],[20,7]];
 for x in pairs do 
 	deg2cuspcheck(x[1],x[2]);
 end for;
