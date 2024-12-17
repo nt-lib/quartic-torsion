@@ -20,26 +20,30 @@ print "Claim 1 successfully verified";
 q := 7;
 
 // Claim 2: Cannot have reduction of the form deg2 + 2 cusps
-time sieved := HeckeSieve(X, q, NoncuspidalPlacesUpToDiamond(X,2));
-print #sieved;
+sieved := HeckeSieve(X, q, NoncuspidalPlacesUpToDiamond(X,2));
+assert #sieved eq 0;
 print "Claim 2 successfully verified";
 
 
 // Claim 3: Cannot have reduction of the form deg2 + deg2
 time S := [x+y: x in NoncuspidalPlacesUpToDiamond(X,2), y in NoncuspidalPlaces(X,2)];
 time sieved := HeckeSieve(X, q, S);
-print #sieved;
+assert #sieved eq 2;
+for p in [11,17,19,23] do
+  time sieved := HeckeSieve(X, p, sieved);
+  assert #sieved eq 2;
+end for;
 print "Claim 3 successfully verified";
 
 
 // Claim 4: Cannot have reduction of the form deg3 + cusp
 time sieved := HeckeSieve(X, q, NoncuspidalPlacesUpToDiamond(X,3));
-print #sieved;
+assert #sieved eq 0;
 print "Claim 4 successfully verified";
 
 // Claim 5: Cannot have reduction of the form deg4
 time sieved := HeckeSieve(X, q, NoncuspidalPlacesUpToDiamond(X,4));
-print #sieved;
+assert #sieved eq 0;
 print "Claim 5 successfully verified";
 
 exit;
