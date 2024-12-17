@@ -1,16 +1,10 @@
-Magma V2.28-3     Fri Dec  6 2024 16:48:38 on euler    [Seed = 2460404431]
+Magma V2.28-3     Mon Dec 16 2024 17:22:17 on euler    [Seed = 3738828695]
 Type ? for help.  Type <Ctrl>-D to quit.
 
 Loading startup file "/home/mderickx/.magma/startup.m"
 
 Loading file "X1_36.m"
 Claim 1 successfully verified
-
-In file "X1_36.m", line 23, column 9:
->> assert #todo3 eq 0;^M
-           ^
-User error: Identifier 'todo3' has not been declared or assigned
 Claim 2 successfully verified
-Claim 3 successfully verified
 
-Total time: 1195.210 seconds, Total memory usage: 96.16MB
+Total time: 1173.230 seconds, Total memory usage: 64.12MB
