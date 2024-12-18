@@ -20,7 +20,7 @@ cusp_degree_fp:=function(p,n,d) // computes the degree of the cusp of X_1(N) cor
 	assert (n mod d) eq 0;
 	a:=n div d;
 	if d le 2 then ord:=OrderMinus(p,a);
-	else ord:=Order(p,a);
+	else ord:=Order(Integers(a)!p);
 	end if;
 return ord;
 end function;
