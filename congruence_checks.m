@@ -65,7 +65,7 @@ end procedure;
 print "we now verify Claim 1, this produces the CC (congruence conditions) values in Table 1.";
 pairs:=[[25,3],[26,7],[28,5],[30,7],[32,3],[34,3],[36,5],[42,11],[20,7],[24,5]];
 for x in pairs do 
-	print "The congruence conditions coming from degree 3 points for n=", x[1], "using p=",p,"are:";
+	print "The congruence conditions coming from degree 3 points for n=", x[1], "using p=",x[2],"are:";
 	CC(x[1],x[2]);
 end for;
 
@@ -76,7 +76,7 @@ print "Now we verify Claim 2 for the pairs (n,p) where there are degree 2 points
 
 pairs:=[[26,7],[28,5],[30,7],[42,11],[20,7]];
 for x in pairs do 
-	print "The congruence conditions coming from degree 2 points for n=", x[1], "using p=",p,"are:";
+	print "The congruence conditions coming from degree 2 points for n=", x[1], "using p=",x[2],"are:";
 	deg2cuspcheck(x[1],x[2]);
 end for;
 
