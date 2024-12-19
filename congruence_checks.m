@@ -76,8 +76,7 @@ end for;
 
 print "Now we verify Claim 2 for the pairs (n,p) where there are degree 2 points on Y_{F_p}";
 
-//pairs:=[[26,7],[28,5],[30,7],[42,11],[20,7]];
-pairs:=[[28,5]];
+pairs:=[[26,7],[28,5],[30,7],[42,11],[20,7]];
 for x in pairs do 
     print "The congruence conditions coming from degree 2 points for n=", x[1], "using p=",x[2],"are:";
     deg2cuspcheck(x[1],x[2]);
