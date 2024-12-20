@@ -1,8 +1,0 @@
-X:=GL2Lift(GL2SplitCartan(2),22)  meet GL2Borel1(22);
-localtestgen := procedure(G,p)
-GL2PointCount(G,p);
-GL2PointCount(G,p^2)-GL2PointCount(G,p);
-GL2PointCount(G,p^3)-GL2PointCount(G,p);
-GL2PointCount(G,p^4)-GL2PointCount(G,p^2);
-end procedure;
-localtestgen(X,3);
