@@ -1,10 +1,9 @@
-//This procedure prints out the CC in our Table 1 and verifies Claim 1 - for given p and n it verifies that if a cusp of X_1(n) or X_1(m,n) not defined over Q becomes defined over F_p, then q must split completely in the field of defintiion of the cusp. 
+//This procedure prints out the CC in our Table 1 and verifies Claim 1 - for given p and n it verifies that if a cusp of X_1(n) or X_1(m,n) not defined over Q becomes defined over F_p, then q must split completely in the field of defintion of the cusp. 
 
 procedure CC(n,p)
     for d in [a: a in Divisors(n)|a lt n/2] do 
-        g:= n div d;
-        if d eq 1 and ((p mod n) eq 1 or (p mod n) eq -1) then print("q has to be congruent to +-1 modulo "),n; end if;
-        if d eq 2 and ((p mod (n div 2)) eq 1 or (p mod (n div 2)) eq -1) then print("q has to be congruent to +-1 modulo "), n div 2; end if;
+        if d eq 1 and ((p mod n) eq 1 or (p mod n) eq (n-1)) then print("q has to be congruent to +-1 modulo "),n; end if;
+        if d eq 2 and ((p mod (n div 2)) eq 1 or (p mod (n div 2)) eq ((n div 2)-1)) then print("q has to be congruent to +-1 modulo "), n div 2; end if;
         if d ge 3 and (p mod (n div d)) eq 1 then print("q has to be congruent to 1 modulo "), n div d; end if;
     end for;
 end procedure;
