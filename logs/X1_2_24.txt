@@ -1,11 +1,9 @@
-Magma V2.28-3     Mon Dec 16 2024 17:22:17 on euler    [Seed = 3908028833]
+Magma V2.28-3     Sun Jul 27 2025 18:17:47 on euler    [Seed = 936978329]
 Type ? for help.  Type <Ctrl>-D to quit.
-
-Loading startup file "/home/mderickx/.magma/startup.m"
 
 Loading file "X1_2_24.m"
 Claim 1 successfully verified
 Claim 2 successfully verified
 Claim 3 successfully verified
 
-Total time: 10478.270 seconds, Total memory usage: 416.47MB
+Total time: 9244.299 seconds, Total memory usage: 416.47MB

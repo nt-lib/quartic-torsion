@@ -1,0 +1,8 @@
+Magma V2.28-3     Sun Jul 27 2025 18:17:47 on euler    [Seed = 1102008815]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "X1_3_15.m"
+Claim 1 successfully verified
+Claim 2 successfully verified
+
+Total time: 31.620 seconds, Total memory usage: 96.16MB

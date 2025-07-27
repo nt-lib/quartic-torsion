@@ -1,10 +1,13 @@
 Seq	Host	Starttime	JobRuntime	Send	Receive	Exitval	Signal	Command
-3	:	1734366137.744	     6.453	0	0	0	0	magma X1_25.m >| logs/X1_25.txt
-6	:	1734366137.758	    12.622	0	0	0	0	magma X1_32.m >| logs/X1_32.txt
-7	:	1734366137.764	    55.243	0	0	0	0	magma X1_34.m >| logs/X1_34.txt
-4	:	1734366137.747	   332.779	0	0	0	0	magma X1_26.m >| logs/X1_26.txt
-8	:	1734366137.770	  1174.144	0	0	0	0	magma X1_36.m >| logs/X1_36.txt
-5	:	1734366137.751	  2122.376	0	0	0	0	magma X1_28.m >| logs/X1_28.txt
-9	:	1734366137.782	  2406.340	0	0	0	0	magma X1_42.m >| logs/X1_42.txt
-1	:	1734366137.737	  6441.359	0	0	0	0	magma X1_2_20.m >| logs/X1_2_20.txt
-2	:	1734366137.741	 10479.601	0	0	0	0	magma X1_2_24.m >| logs/X1_2_24.txt
+1	:	1753633067.247	     0.064	0	0	0	0	magma -n congruence_checks.m >| logs/congruence_checks.txt
+4	:	1753633067.258	     6.156	0	0	0	0	magma -n X1_25.m >| logs/X1_25.txt
+9	:	1753633067.275	    12.494	0	0	0	0	magma -n X1_32.m >| logs/X1_32.txt
+8	:	1753633067.271	    31.657	0	0	0	0	magma -n X1_3_15.m >| logs/X1_3_15.txt
+10	:	1753633067.279	    58.792	0	0	0	0	magma -n X1_34.m >| logs/X1_34.txt
+7	:	1753633067.268	    79.944	0	0	0	0	magma -n X1_30.m >| logs/X1_30.txt
+5	:	1753633067.260	   267.474	0	0	0	0	magma -n X1_26.m >| logs/X1_26.txt
+11	:	1753633067.315	   952.998	0	0	0	0	magma -n X1_36.m >| logs/X1_36.txt
+6	:	1753633067.265	  1606.487	0	0	0	0	magma -n X1_28.m >| logs/X1_28.txt
+12	:	1753633073.418	  1892.381	0	0	0	0	magma -n X1_42.m >| logs/X1_42.txt
+2	:	1753633067.251	  5937.746	0	0	0	0	magma -n X1_2_20.m >| logs/X1_2_20.txt
+3	:	1753633067.254	  9244.526	0	0	0	0	magma -n X1_2_24.m >| logs/X1_2_24.txt
